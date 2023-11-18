@@ -1,7 +1,16 @@
-import { PokemonData } from "@/types/pokemon-data";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: PokemonData[] = [];
+import { PokemonData } from "@/types/pokemon-data";
+
+interface InitialState {
+  data: PokemonData[];
+  status: "loading" | "idle";
+}
+
+const initialState: InitialState = {
+  data: [],
+  status: "idle",
+};
 
 export const pokemonsSlice = createSlice({
   name: "pokemons",
